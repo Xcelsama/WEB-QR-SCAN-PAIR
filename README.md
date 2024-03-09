@@ -1,4 +1,5 @@
-##QR- WEB - PAIR CODE For bot with Whiskey sockets/Baileys
+##QR- WEB - PAIR CODE For bot with Whiskey sockets/Baileys##
+
 <p align="center">
    <a href="https://github.com/Xcelsama">
     <img src="https://i.ibb.co/HtT3vjm/goku-gif-3.gif" width="500">
