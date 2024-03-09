@@ -1,4 +1,12 @@
 ##QR- WEB - PAIR CODE For bot with Whiskey sockets/Baileys
+<p align="center">
+   <a href="https://github.com/Xcelsama">
+    <img src="https://telegra.ph/file/f2fa9732e0e26bbb0bfb0.jpg" width="249">
+     
+</a>
+   <a aria-label="Excel-MdV2 is free to use" href="https://whatsapp.com/channel/0029VaBcXo4JJhzW9c1uVD2X" target="_blank">
+ <p align="center"><img src="https://profile-counter.glitch.me/{xcelsama}/count.svg" alt="xcelsama:: Visitor's Count" /></p>
+
 
 
 [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
