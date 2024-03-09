@@ -2,7 +2,7 @@
     "name": "Web:-scan/pair",
     "description": "By Xcelsama",
     "logo": "https://telegra.ph/file/f2fa9732e0e26bbb0bfb0.jpg",
-    "repository": "https://github.com/Xcelsama"",
+    "repository": "https://github.com/Xcelsama", 
     "keywords": ["whatsappbot"],
     "success_url": "/", 
     "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
