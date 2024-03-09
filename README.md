@@ -22,4 +22,7 @@ Now Deploy
 <a href='https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/WEB-QR-SCAN-PAIR' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/>
 
 
+# `OWNER` 
+<a href="https://github.com/Xcelsama"><img src="https://github.com/Xcelsama.png" width="250" height="250" alt="Xcelsama"/></a>
 
+   
