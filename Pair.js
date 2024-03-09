@@ -20,13 +20,13 @@ function removeFile(FilePath){
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
-        async function STAR_MD_PAIR_CODE() {
+        async function XLICON_V2_MD_PAIR_CODE() {
         const {
             state,
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_Excel_Xcelsama = Excel_Xcelsama({
+            let Pair_Code_By_Xlicon_V2 = v2_Xlicon({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -35,16 +35,16 @@ router.get('/', async (req, res) => {
                 logger: pino({level: "fatal"}).child({level: "fatal"}),
                 browser: ["Chrome (Linux)", "", ""]
              });
-             if(!Pair_Code_By_Excel_Xcelsama.authState.creds.registered) {
+             if(!Pair_Code_By_Xlicon_V2.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_Excel_Xcelsama.requestPairingCode(num)
+                            const code = await Pair_Code_By_Xlicon_V2.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Code_By_Excel_Xcelsama.ev.on('creds.update', saveCreds)
-            Pair_Code_By_Excel_Xcelsama.ev.on("connection.update", async (s) => {
+            Pair_Code_By_Xlicon_V2.ev.on('creds.update', saveCreds)
+            Pair_Code_By_Xlicon_V2.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -54,37 +54,37 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(800);
                let b64data = Buffer.from(data).toString('base64');
-               let session = await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id, { text: '' + b64data });
+               let session = await Pair_Code_By_Abraham_Tech.sendMessage(Pair_Code_By_Abraham_Tech.user.id, { text: '' + b64data });
 
                let STAR_MD_TEXT = `
-*_Pair Code Connected by Gifted Tech_*
+*_Pair Code Connected by ABRAHAM Tech_*
 *_Made With HTML📡_*
 ______________________________________
 ╔════◇
-║ *『 WOW YOU CHOSE STAR-MD』*
+║ *『 WOW YOU CHOSE XLICON-V2-MD』*
 ║ _You Have Completed the First Step to Deploy a Whatsapp Bot._
 ╚══════════════════════╝
 ╔═════◇
 ║  『••• 𝗩𝗶𝘀𝗶𝘁 𝗙𝗼𝗿 𝗛𝗲𝗹𝗽 •••』
-║❒ *Channel:* _https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m_
-║❒ *Owner:* _https://wa.me/2347045035241_
-║❒ *Repo:* _https://github.com/Xcelsama/STAR-MD-V2_
-║❒ *WaGroup:* _https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK_
-║❒ *WaChannel:* _https://whatsapp.com/channel/0029VaJmfmTDJ6H7CmuBss0o_
-║❒ *Other Repo:* _https://github.com/Xcelsama/STAR-MD_
+║❒ *Channel:* _https://t.me/ahmmikun_
+║❒ *Owner:* _https://wa.me/923184070915
+║❒ *Repo:* _https://github.com/salmanytofficial/XLICON-V2-MD
+║❒ *WaGroup:* _https://chat.whatsapp.com/BF0scOg0g1mEe1N4lVNgh1
+║❒ *WaChannel:* _https://whatsapp.com/channel/0029VaINgEZK0IBaK1nDtE3f
+║❒ *Other Repo:* _https://github.com/salmanytofficial/XLICON-V3-MD
 ╚══════════════════════╝ 
 _____________________________________
 
 _Don't Forget To Give Star To My Repo_`
- await Pair_Code_By_Excel_Xcelsama.sendMessage(Pair_Code_By_Excel_Xcelsama.user.id,{text:STAR_MD_TEXT},{quoted:session})
+ await Pair_Code_By_Xlicon_V2.sendMessage(Pair_Code_By_Xlicon_V2,{text:XLICON_MD_TEXT},{quoted:session})
  
 
         await delay(100);
-        await Pair_Code_By_Excel_Xcelsama.ws.close();
+        await Pair_Code_By_Xlicon_V2.ws.close();
         return await removeFile('./temp/'+id);
             } else if (connection === "close" && lastDisconnect && lastDisconnect.error && lastDisconnect.error.output.statusCode != 401) {
                     await delay(10000);
-                    STAR_MD_PAIR_CODE();
+                    XLICON_MD_PAIR_CODE();
                 }
             });
         } catch (err) {
@@ -95,6 +95,6 @@ _Don't Forget To Give Star To My Repo_`
          }
         }
     }
-    return await STAR_MD_PAIR_CODE()
+    return await XLICON_MD_PAIR_CODE()
 });
 module.exports = router
