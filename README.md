@@ -1,4 +1,4 @@
-##QR- WEB - PAIR CODE For bot with Whiskey sockets/Baileys##
+```QR- WEB - PAIR CODE For bot with Whiskey sockets/Baileys```
 
 <p align="center">
    <a href="https://github.com/Xcelsama">
