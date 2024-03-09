@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
 	
 				   let STAR_MD_TEXT = `
 *_Qr Code By Excel_*
-*_Made With Nod.json_*
+*_Made With HTML_*
 	
 _Don't Forget To Give Star To My Repo_`
 	 await Qr_Code_By_Excel_Xcelsama.sendMessage(Qr_Code_By_Excel_Xcelsama.user.id,{text:STAR_MD_TEXT},{quoted:session})
