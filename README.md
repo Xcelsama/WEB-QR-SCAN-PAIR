@@ -1,5 +1,6 @@
-```QR- WEB - PAIR CODE For bot with Whiskey sockets/Baileys```
-
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
+##QR- WEB - PAIR CODE FOR BOT WITH WHISKEYSOCKETS/BAILEYS##
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
    <a href="https://github.com/Xcelsama">
     <img src="https://i.ibb.co/HtT3vjm/goku-gif-3.gif" width="500">
