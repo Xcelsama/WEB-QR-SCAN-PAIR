@@ -13,12 +13,11 @@ QR- WEB - PAIR CODE FOR BOT WITH WHISKEYSOCKETS/BAILEYS
 
 [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
 
-➤FORK THE REPOSITORY (Repo) 
+FORK THE REPOSITORY (Repo) 
     <br>
 <a href="https://github.com/Xcelsama/WEB-QR-SCAN-PAIR/fork"><img title="WEB" src="https://img.shields.io/badge/FORK WEB-QR?color=black&style=for-the-badge&logo=stackshare"></a>
 
-
-➤Now Deploy
+Now Deploy
     <br>
 <a href='https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/WEB-QR-SCAN-PAIR' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/>
 
