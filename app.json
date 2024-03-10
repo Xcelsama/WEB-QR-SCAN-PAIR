@@ -1,9 +1,9 @@
 {
-    "name": "Web:-scan/pair",
-    "description": "By Xcelsama",
-    "logo": "https://telegra.ph/file/f2fa9732e0e26bbb0bfb0.jpg",
-    "repository": "https://github.com/Xcelsama", 
-    "keywords": ["whatsappbot"],
+    "name": "WEB Qr/Pair",
+    "description": "I'm Web QR by Gifted tech & Excel",
+    "logo": "https://i.ibb.co/HtT3vjm/goku-gif-3.gif",
+    "repository": "https://github.com/Xcelsama",
+    "keywords": ["@Xcelsama"],
     "success_url": "/", 
     "buildpacks": [{ "url": "https://github.com/heroku/heroku-buildpack-nodejs#latest" } ],
     "env": {      
@@ -14,8 +14,9 @@
       },
       "MESSAGE": {
         "description": "set session id conformation message",
-        "value": "Just deploy don't input anything"
+        "value": "",
+        "required": false 
       }
     }   
 
-    }
+}
