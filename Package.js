@@ -8,7 +8,7 @@
     "scripts": {
     "start": "node Excel.js"
   },
-  "author": "Excel",
+  "author": "GiftedTech",
   "license": "GPL-3.0 license",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.5.0",
