@@ -57,7 +57,7 @@ router.get('/', async (req, res) => {
                let session = await Pair_Code_By_Gifted_Tech.sendMessage(Pair_Code_By_Gifted_Tech.user.id, { text: '' + b64data });
 
                let STAR_MD_TEXT = `
-*_Pair Code Connected by Gifted Tech_*
+*_Pair Code Connected by Excel_*
 *_Made With HTML📡_*
 ______________________________________
 ╔════◇
