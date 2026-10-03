@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code</title>
+  <style>
+    body { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; margin:0; padding:16px;
+           background:black; color:#e5f5f1; font-family:Arial,sans-serif; text-align:center; }
+    #qr { width:min(320px,80vw); height:min(320px,80vw); background:#fff; border-radius:8px; }
+    #status { margin:16px 0 8px; font-weight:bold; }
+    .hint { max-width:320px; font-size:13px; color:#9db5ae; margin:0 0 16px; }
+    button { padding:.7em 1.6em; background:green; color:#e5f5f1; border:.3px solid #e5f5f1; border-radius:6px; font-size:16px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <img id="qr" alt="WhatsApp QR code">
+  <div id="status">Loading…</div>
+  <p class="hint">WhatsApp > Linked devices > Link a device, then scan. Your session ID will arrive in your own chat ("Message yourself"). To link the phone you are holding, use the pair code page instead.</p>
+  <button id="again">New QR</button>
+  <p><a href="/" style="color:#9db5ae">Back</a></p>
+<script>
+  const img = document.getElementById('qr'), status = document.getElementById('status');
+  let timer = null, refreshes = 0;
+
+  function load() {
+    clearInterval(timer);
+    status.textContent = 'Loading…';
+    img.src = '/qr?t=' + Date.now();
+  }
+  img.onload = () => {
+    let left = 55;
+    status.textContent = 'Scan now (' + left + 's)';
+    timer = setInterval(() => {
+      left--;
+      if (left > 0) { status.textContent = 'Scan now (' + left + 's)'; return; }
+      clearInterval(timer);
+      if (++refreshes <= 3) load(); else status.textContent = 'Expired. Press New QR.';
+    }, 1000);
+  };
+  img.onerror = () => { clearInterval(timer); status.textContent = 'Could not get a QR. Wait a moment and press New QR.'; };
+  document.getElementById('again').onclick = () => { refreshes = 0; load(); };
+  load();
+</script>
+</body>
+</html>

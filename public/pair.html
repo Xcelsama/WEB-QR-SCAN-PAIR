@@ -162,7 +162,7 @@
       </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.7/axios.min.js"></script>
   <script>
     let a = document.getElementById("pair");
     let b = document.getElementById("submit");
@@ -187,7 +187,7 @@
       e.preventDefault();
       if (!c.value) {
         a.innerHTML = '<a style="color:white;font-weight:bold">Enter your WhatsApp number with Country Code</a><br><br>';
-      } else if (c.value.replace(/[^0-9]/g, "").length < 11) {
+      } else if (c.value.replace(/[^0-9]/g, "").length < 8) {
         a.innerHTML = '<a style="color:red;font-weight:bold">Invalid Number</a><br><br>';
       } else {
         const Excel_Xcelsama= c.value.replace(/[^0-9]/g, "");
@@ -208,9 +208,9 @@
         c.value = "+" + bb;
         c.style = "color:black;font-size:20px";
         a.innerHTML = '<a style="color:white;font-weight:bold">Please Wait...</a><br><br>';
-        let { data } = await axios(`/code?number=${Gifted_Tech}`);
-        let code = data.code || "Service Unavailable";
-        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><br>';
+        let res = await axios(`/code?number=${Excel_Xcelsama}`, { validateStatus: () => true }).catch(() => null);
+        let code = res?.data?.code || "Service Unavailable";
+        a.innerHTML = '<font id="copy" onclick="Copy()" style="color:red;font-weight:bold" size="5">CODE: <span style="color:white;font-weight:bold">' + code + '</span></font><br><br><a style="color:white;font-size:13px">WhatsApp > Linked devices > Link with phone number. Your session ID will arrive in your own chat.</a><br><br>';
       }
     });
   </script>

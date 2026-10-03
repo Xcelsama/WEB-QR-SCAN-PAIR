@@ -1,28 +1,27 @@
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-QR- WEB - PAIR CODE FOR BOT WITH WHISKEYSOCKETS/BAILEYS
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-<p align="center">
-   <a href="https://github.com/Xcelsama">
-    <img src="https://i.ibb.co/HtT3vjm/goku-gif-3.gif" width="500">
-     
-</a>
-   <a aria-label="Excel-MdV2 is free to use" href="https://whatsapp.com/channel/0029VaBcXo4JJhzW9c1uVD2X" target="_blank">
- <p align="center"><img src="https://profile-counter.glitch.me/{xcelsama}/count.svg" alt="xcelsama:: Visitor's Count" /></p>
+# WEB-QR-SCAN-PAIR (updated for XLICON-MD)
 
+QR and pairing-code session generator. The SESSION_ID is sent to the linked account's own
+"Message yourself" chat as plain base64 of creds.json, which is exactly what XLICON-MD's
+`SESSION_ID` expects (it runs `atob()` on it). Both use Baileys 7.0.0-rc14.
 
+## Deploy on Vercel
+1. Replace the repo contents with these files (see "Delete" below).
+2. Vercel > Project > Settings > Build and Deployment: Framework Preset = **Other** (or Express), leave all overrides blank.
+3. Redeploy. No environment variables are required. Optional: `MESSAGE` (second chat message).
 
-[`ℹ️Contact Owner`](https://wa.me/+2347045035241)
+## Routes
+- `/` buttons, `/qr.html` QR page, `/pair.html` pair-code page
+- `GET /qr` returns the QR as PNG, `GET /code?number=2348012345678` returns `{ "code": "ABCD-EFGH" }`
 
-FORK THE REPOSITORY (Repo) 
-    <br>
-<a href="https://github.com/Xcelsama/WEB-QR-SCAN-PAIR/fork"><img title="WEB" src="https://img.shields.io/badge/FORK WEB-QR?color=black&style=for-the-badge&logo=stackshare"></a>
+## Delete from the old repo
+`Excel.js`, `id.js`, `main.html`, `pair.html` (now in `public/`), the `Temp/` folder.
+Also: the old `qr.js`/`pair.js` had a Pastebin API key hard-coded. It is unused now, but it stays in
+your Git history, so treat it as exposed.
 
-Now Deploy
-    <br>
-<a href='https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/WEB-QR-SCAN-PAIR' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/>
+## How it works
+`/qr` and `/code` answer as soon as the first QR/code exists. On Vercel, `waitUntil()` keeps the
+function alive (up to 300s) while the phone links, then the ID is sent and the temp folder deleted.
 
-
-# `OWNER` 
-<a href="https://github.com/Xcelsama"><img src="https://github.com/Xcelsama.png" width="250" height="250" alt="Xcelsama"/></a>
-
-   
+## Safety
+The session ID is a password for that WhatsApp account. Use a spare number and don't run the bot
+and this site on the same session at once. Unofficial clients can get numbers banned.
