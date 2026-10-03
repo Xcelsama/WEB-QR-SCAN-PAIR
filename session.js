@@ -8,15 +8,9 @@ const fs = require('fs');
 const os = require('os');
 const path = require('path');
 const pino = require('pino');
-const {
-  default: makeWASocket,
-  useMultiFileAuthState,
-  fetchLatestBaileysVersion,
-  makeCacheableSignalKeyStore,
-  Browsers,
-  DisconnectReason,
-  jidNormalizedUser,
-} = require('baileys');
+// Baileys 7 is an ES module, so CommonJS must load it with import(), not require().
+let baileys = null;
+const loadBaileys = async () => (baileys ||= await import('baileys'));
 
 let waitUntil = null;
 try { ({ waitUntil } = require('@vercel/functions')); } catch {}
@@ -95,6 +89,10 @@ async function run({ mode, number, resolveFirst, rejectFirst }) {
 
   const connect = async () => {
     stop(); // after WhatsApp's post-link restart, drop the old socket first
+    const {
+      default: makeWASocket, useMultiFileAuthState, fetchLatestBaileysVersion,
+      makeCacheableSignalKeyStore, Browsers, DisconnectReason, jidNormalizedUser,
+    } = await loadBaileys();
     const { state, saveCreds } = await useMultiFileAuthState(dir);
     const fetched = await fetchLatestBaileysVersion().catch(() => ({}));
     const s = makeWASocket({
@@ -163,4 +161,4 @@ async function run({ mode, number, resolveFirst, rejectFirst }) {
   }
 }
 
-module.exports = { startLink, allow, keepAlive };
+module.exports = { startLink, allow, keepAlive, _setBaileys: (b) => { baileys = b; } }; // _setBaileys is for tests

@@ -13,7 +13,7 @@ QR and pairing-code session generator. The SESSION_ID is sent to the linked acco
 - `/` buttons, `/qr.html` QR page, `/pair.html` pair-code page
 - `GET /qr` returns the QR as PNG, `GET /code?number=2348012345678` returns `{ "code": "ABCD-EFGH" }`
 
-## Delete from the old repo
+## Delete from the old repo (if still there)
 `Excel.js`, `id.js`, `main.html`, `pair.html` (now in `public/`), the `Temp/` folder.
 Also: the old `qr.js`/`pair.js` had a Pastebin API key hard-coded. It is unused now, but it stays in
 your Git history, so treat it as exposed.
@@ -25,3 +25,8 @@ function alive (up to 300s) while the phone links, then the ID is sent and the t
 ## Safety
 The session ID is a password for that WhatsApp account. Use a spare number and don't run the bot
 and this site on the same session at once. Unofficial clients can get numbers banned.
+
+## Notes
+- Baileys 7 is an ES module, so `session.js` loads it with `import()`. Do not change it back to `require('baileys')`:
+  on Vercel's runtime that crashes every route with ERR_REQUIRE_ESM.
+- `public/favicon.svg` and `public/favicon.ico` are the site icon.
